@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- versión de desarrollo, incluye advertencias de ayuda en la consola -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!-- versión de producción, optimizada para tamaño y velocidad -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="css/format.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <title>API One Piece</title>
+</head>
+<body>
+    <h1 class="title">One Piece</h1>
+    <section id="container-op" class="container-main">
+        <section v-if="errored">
+            <p>Lo sentimos, no es posible obtener la información en este momento, por favor intente nuevamente mas tarde</p>
+        </section>
+        <div v-if="loading">Cargando...</div>
+        <section v-else v-for="cardOp in info" class="card" v-on:click="openPage(cardOp.page)">
+            <section class="card-image">
+                <img :src="cardOp.image" alt="imagen 1">
+            </section>
+            <section class="card-title">
+                <p>{{ cardOp.tittle }}</p>
+            </section>
+        </section>
+    </section>
+    <script src="js/index.js"></script>
+</body>
+</html>

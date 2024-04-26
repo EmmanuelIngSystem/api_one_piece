@@ -1,0 +1,98 @@
+[
+    {
+        "id": 0,
+        "tittle": "Las sagas",
+        "image": "https://images.api-onepiece.com/category/8d2d93b1269afdddbcbcb8b390dd0847.png",
+        "page": "sagas.html"
+    },
+    {
+        "id": 1,
+        "tittle": "Las frutas",
+        "image": "https://images.api-onepiece.com/category/2c8a13c3cad6dbae45bdbaf484c5e0a1.png",
+        "page": "frutas.html"
+    },
+    {
+        "id": 2,
+        "tittle": "Los capitulos",
+        "image": "https://images.api-onepiece.com/category/3b5988fa9e8522cccff7ad2cb0ed7fb4.png",
+        "page": "capitulos.html"
+    },
+    {
+        "id": 3,
+        "tittle": "Volúmenes",
+        "image": "https://images.api-onepiece.com/category/59c53af738cac11bd9f1e5988ca77264.png",
+        "page": "volumenes.html"
+    },
+    {
+        "id": 4,
+        "tittle": "Los episodios",
+        "image": "https://images.api-onepiece.com/category/8b943615f5ba39ac912e6e3db45d5858.png",
+        "page": "episodios.html"
+    },
+    {
+        "id": 5,
+        "tittle": "Diales",
+        "image": "https://images.api-onepiece.com/category/3aa94901244616507bf4627af8ca7474.png",
+        "page": "diales.html"
+    },
+    {
+        "id": 6,
+        "tittle": "Las películas",
+        "image": "https://images.api-onepiece.com/category/e401eef31431f185ecae37d3555c2a80.png",
+        "page": "peliculas.html"
+    },
+    {
+        "id": 7,
+        "tittle": "Espadas",
+        "image": "https://images.api-onepiece.com/category/3c0ed162f2645c52cee16cb53e140dc4.png",
+        "page": "espadas.html"
+    },
+    {
+        "id": 8,
+        "tittle": "Hakis",
+        "image": "https://images.api-onepiece.com/category/480f7b25fa9564c5791f2ee48b1bf371.png",
+        "page": "hakis.html"
+    },
+    {
+        "id": 9,
+        "tittle": "Luffy's gear",
+        "image": "https://images.api-onepiece.com/category/a0c5574a928dd0dc5bd5d10a3b42e0a0.png",
+        "page": "luffy_gears.html"
+    },
+    {
+        "id": 10,
+        "tittle": "Las técnicas de Luffy",
+        "image": "https://images.api-onepiece.com/category/2a559d8ff43f6a38f70d542bcb9e58e2.png",
+        "page": "luffy_tecnicas.html"
+    },
+    {
+        "id": 11,
+        "tittle": "Las tripulaciones",
+        "image": "https://images.api-onepiece.com/category/85a16145552a96e590f34d7955ae15da.png",
+        "page": "tripulaciones.html"
+    },
+    {
+        "id": 12,
+        "tittle": "Los personajes",
+        "image": "https://images.api-onepiece.com/category/b6b6cc9a1cb92974acf6bdf3d0291925.png",
+        "page": "personajes.html"
+    },
+    {
+        "id": 13,
+        "tittle": "Los botes",
+        "image": "https://images.api-onepiece.com/category/2d89b8cf3fd434a3c1e457a4cfbd20cb.png",
+        "page": "botes.html"
+    },
+    {
+        "id": 14,
+        "tittle": "Arcos",
+        "image": "https://images.api-onepiece.com/category/bb4c5e17d68cabe2a88a8d65c03f00ba.png",
+        "page": "arcos.html"
+    },
+    {
+        "id": 15,
+        "tittle": "Ubicaciones",
+        "image": "https://images.api-onepiece.com/category/a43b56d4a9ac7ad9051f431c1b6af822.png",
+        "page": "ubicaciones.html"
+    }
+]
