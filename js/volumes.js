@@ -1,5 +1,5 @@
 new Vue({
-    el: '#container-capitulos',
+    el: '#container-volumes',
     data () {
         return {
             info: null,
@@ -9,9 +9,9 @@ new Vue({
     },
     mounted() {
         axios
-            .get('https://api.api-onepiece.com/v2/chapters/en')
+            .get('https://api.api-onepiece.com/v2/tomes/en')
             .then(response => {
-                console.log("capitulos")
+                console.log("volumenes")
                 console.log(response.data)
                 this.info = response.data
             })

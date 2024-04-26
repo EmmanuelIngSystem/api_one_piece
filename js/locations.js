@@ -1,5 +1,5 @@
 new Vue({
-    el: '#container-espadas',
+    el: '#container-locations',
     data () {
         return {
             info: null,
@@ -9,9 +9,9 @@ new Vue({
     },
     mounted() {
         axios
-            .get('https://api.api-onepiece.com/v2/swords/en')
+            .get('https://api.api-onepiece.com/v2/locates/en')
             .then(response => {
-                console.log("espadas")
+                console.log("ubicaciones")
                 console.log(response.data)
                 this.info = response.data
             })

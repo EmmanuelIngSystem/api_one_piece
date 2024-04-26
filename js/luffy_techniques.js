@@ -1,5 +1,5 @@
 new Vue({
-    el: '#container-ubicaciones',
+    el: '#container-luffy_techniques',
     data () {
         return {
             info: null,
@@ -9,9 +9,9 @@ new Vue({
     },
     mounted() {
         axios
-            .get('https://api.api-onepiece.com/v2/locates/en')
+            .get('https://api.api-onepiece.com/v2/luffy-techniques/en')
             .then(response => {
-                console.log("ubicaciones")
+                console.log("luffy tecnicas")
                 console.log(response.data)
                 this.info = response.data
             })

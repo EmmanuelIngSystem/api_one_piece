@@ -1,5 +1,5 @@
 new Vue({
-    el: '#container-peliculas',
+    el: '#container-dials',
     data () {
         return {
             info: null,
@@ -9,9 +9,9 @@ new Vue({
     },
     mounted() {
         axios
-            .get('https://api.api-onepiece.com/v2/movies/en')
+            .get('https://api.api-onepiece.com/v2/dials/en')
             .then(response => {
-                console.log("peliculas")
+                console.log("diales")
                 console.log(response.data)
                 this.info = response.data
             })

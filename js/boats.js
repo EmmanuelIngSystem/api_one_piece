@@ -1,5 +1,5 @@
 new Vue({
-    el: '#container-tripulaciones',
+    el: '#container-boats',
     data () {
         return {
             info: null,
@@ -9,9 +9,9 @@ new Vue({
     },
     mounted() {
         axios
-            .get('https://api.api-onepiece.com/v2/crews/en')
+            .get('https://api.api-onepiece.com/v2/boats/en')
             .then(response => {
-                console.log("tripulaciones")
+                console.log("botes")
                 console.log(response.data)
                 this.info = response.data
             })

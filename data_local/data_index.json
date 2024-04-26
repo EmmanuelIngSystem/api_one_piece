@@ -1,51 +1,51 @@
 [
     {
         "id": 0,
-        "tittle": "Las sagas",
+        "tittle": "The sagas",
         "image": "https://images.api-onepiece.com/category/8d2d93b1269afdddbcbcb8b390dd0847.png",
         "page": "sagas.html"
     },
     {
         "id": 1,
-        "tittle": "Las frutas",
+        "tittle": "The fruits",
         "image": "https://images.api-onepiece.com/category/2c8a13c3cad6dbae45bdbaf484c5e0a1.png",
-        "page": "frutas.html"
+        "page": "fruits.html"
     },
     {
         "id": 2,
-        "tittle": "Los capitulos",
+        "tittle": "The chapters",
         "image": "https://images.api-onepiece.com/category/3b5988fa9e8522cccff7ad2cb0ed7fb4.png",
-        "page": "capitulos.html"
+        "page": "chapters.html"
     },
     {
         "id": 3,
-        "tittle": "Volúmenes",
+        "tittle": "Volumes",
         "image": "https://images.api-onepiece.com/category/59c53af738cac11bd9f1e5988ca77264.png",
-        "page": "volumenes.html"
+        "page": "volumes.html"
     },
     {
         "id": 4,
-        "tittle": "Los episodios",
+        "tittle": "The episodes",
         "image": "https://images.api-onepiece.com/category/8b943615f5ba39ac912e6e3db45d5858.png",
-        "page": "episodios.html"
+        "page": "episodes.html"
     },
     {
         "id": 5,
-        "tittle": "Diales",
+        "tittle": "Dials",
         "image": "https://images.api-onepiece.com/category/3aa94901244616507bf4627af8ca7474.png",
-        "page": "diales.html"
+        "page": "dials.html"
     },
     {
         "id": 6,
-        "tittle": "Las películas",
+        "tittle": "The films",
         "image": "https://images.api-onepiece.com/category/e401eef31431f185ecae37d3555c2a80.png",
-        "page": "peliculas.html"
+        "page": "films.html"
     },
     {
         "id": 7,
-        "tittle": "Espadas",
+        "tittle": "Swords",
         "image": "https://images.api-onepiece.com/category/3c0ed162f2645c52cee16cb53e140dc4.png",
-        "page": "espadas.html"
+        "page": "swords.html"
     },
     {
         "id": 8,
@@ -61,38 +61,38 @@
     },
     {
         "id": 10,
-        "tittle": "Las técnicas de Luffy",
+        "tittle": "Luffy's techniques",
         "image": "https://images.api-onepiece.com/category/2a559d8ff43f6a38f70d542bcb9e58e2.png",
-        "page": "luffy_tecnicas.html"
+        "page": "luffy_techniques.html"
     },
     {
         "id": 11,
-        "tittle": "Las tripulaciones",
+        "tittle": "The crews",
         "image": "https://images.api-onepiece.com/category/85a16145552a96e590f34d7955ae15da.png",
-        "page": "tripulaciones.html"
+        "page": "crews.html"
     },
     {
         "id": 12,
-        "tittle": "Los personajes",
+        "tittle": "The characters",
         "image": "https://images.api-onepiece.com/category/b6b6cc9a1cb92974acf6bdf3d0291925.png",
-        "page": "personajes.html"
+        "page": "characters.html"
     },
     {
         "id": 13,
-        "tittle": "Los botes",
+        "tittle": "The boats",
         "image": "https://images.api-onepiece.com/category/2d89b8cf3fd434a3c1e457a4cfbd20cb.png",
-        "page": "botes.html"
+        "page": "boats.html"
     },
     {
         "id": 14,
-        "tittle": "Arcos",
+        "tittle": "Bows",
         "image": "https://images.api-onepiece.com/category/bb4c5e17d68cabe2a88a8d65c03f00ba.png",
-        "page": "arcos.html"
+        "page": "bows.html"
     },
     {
         "id": 15,
-        "tittle": "Ubicaciones",
+        "tittle": "Locations",
         "image": "https://images.api-onepiece.com/category/a43b56d4a9ac7ad9051f431c1b6af822.png",
-        "page": "ubicaciones.html"
+        "page": "locations.html"
     }
 ]

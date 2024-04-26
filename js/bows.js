@@ -1,5 +1,5 @@
 new Vue({
-    el: '#container-personajes',
+    el: '#container-bows',
     data () {
         return {
             info: null,
@@ -9,9 +9,9 @@ new Vue({
     },
     mounted() {
         axios
-            .get('https://api.api-onepiece.com/v2/characters/en')
+            .get('https://api.api-onepiece.com/v2/arcs/en')
             .then(response => {
-                console.log("personajes")
+                console.log("arcos")
                 console.log(response.data)
                 this.info = response.data
             })
