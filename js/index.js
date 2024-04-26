@@ -1,4 +1,4 @@
-new Vue({
+var containe_op = new Vue({
     el: '#container-op',
     data () {
         return {
@@ -25,6 +25,8 @@ new Vue({
                 console.error(error)
                 this.errored = true
             })
-            .finally(()=> this.loading = false)
+            .finally(()=> {
+                setTimeout( ()=> this.loading = false, 1800 );
+            })
     }
 });

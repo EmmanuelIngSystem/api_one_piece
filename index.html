@@ -10,6 +10,7 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="css/format.css">
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/loader.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
@@ -18,6 +19,11 @@
 <body>
     <h1 class="title">One Piece</h1>
     <section id="container-op" class="container-main">
+        <!-- loader -->
+        <div id="loading-animation" class="heading large-text" v-if="loading">
+            <p>l</p><p>o</p><p>a</p><p>d</p><p>i</p><p>n</p><p>g</p>
+        </div>
+        <!-- loader -->
         <section v-if="errored">
             <p>Lo sentimos, no es posible obtener la información en este momento, por favor intente nuevamente mas tarde</p>
         </section>
