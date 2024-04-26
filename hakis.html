@@ -9,7 +9,9 @@
     <!-- <script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="css/format.css">
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/hakis.css">
+    <link rel="stylesheet" href="css/loader.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
@@ -17,8 +19,35 @@
 </head>
 <body>
     <h1 class="title">Hakis</h1>
-    <section id="container-hakis">
-        <pre>{{ info }}</pre>
+    <section id="container-hakis" class="advertisers-service-sec container-hakis">
+        <!-- loader -->
+        <div id="loading-animation" class="heading large-text" v-if="loading">
+            <p>l</p><p>o</p><p>a</p><p>d</p><p>i</p><p>n</p><p>g</p>
+        </div>
+        <!-- loader -->
+        <section v-if="errored">
+            <p>Lo sentimos, no es posible obtener la información en este momento, por favor intente nuevamente mas tarde</p>
+        </section>
+        <section v-if="loading">Cargando...</section>
+        <section v-else v-for="cardHaki in info">
+            <section class="col">
+                <section class="service-card">
+                <section class="icon-wrapper">
+                    <section v-if="cardHaki.name.includes('Observation')">
+                        <i class="fa-solid fa-eye"></i>
+                    </section>
+                    <section v-if="cardHaki.name.includes('Weaponry')">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </section>
+                    <section v-if="cardHaki.name.includes('Kings')">
+                        <i class="fa-solid fa-chess-king"></i>
+                    </section>
+                </section>
+                <h3>{{ cardHaki.name }}</h3>
+                <p class="description">{{ cardHaki.description }}</p>
+                </section>
+            </section>
+        </section>
     </section>
     <script src="js/hakis.js"></script>
 </body>

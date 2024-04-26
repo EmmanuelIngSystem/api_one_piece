@@ -1,6 +1,6 @@
 En este orden ire haciendo cada vista de cada pagina
 
-1.- Hakis                                                                      - 3
+1.- Hakis                                                                      - 3                      OK
 2.- Gears de Luffy                                                             - 6
 3.- Sagas                                                                      - 10
 4.- Films                                                                      - 15

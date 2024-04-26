@@ -20,6 +20,8 @@ new Vue({
                 console.error(error)
                 this.errored = true
             })
-            .finally(()=> this.loading = false)
+            .finally(()=> {
+                setTimeout( ()=> this.loading = false, 1500 );
+            })
     }
 });
