@@ -1,0 +1,108 @@
+body {
+    background: #dbe4ed;
+}
+
+h1.title{
+    text-align: center;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: bolder;
+    font-style: normal;
+    font-size: 50px;
+    background-image: linear-gradient(to right top, #dbe4ed, #b2c8d8, #86adc3, #5593ac, #007a94);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* link de referencia: https://codepen.io/Suneharakhan/pen/MWzpmLE */
+.container-lufy_gears {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-gap: 30px;
+    margin: 0px 60px 0px 60px;
+    font-family: "Roboto", sans-serif;
+}
+
+.card-luffy_gear {
+    position: relative;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+    border-color: transparent;
+    border-width: 2px;
+    border-radius: 0.5rem;
+    box-shadow: #ccc 0px 6px 6px;
+    background-size: 100% 100%;
+    border : 5px solid #b2c8d8;    
+    -webkit-transition : border 500ms ease-out; 
+    -moz-transition : border 500ms ease-out;
+    -o-transition : border 500ms ease-out;
+}
+
+.card-luffy_gear:hover {
+    border : 7px solid #007a94;   
+}
+
+.background-card-luffy_gear {
+    width: 100%;
+    height: 400px;
+    background-size: 100% 100%;
+}
+
+.background-card-luffy_gear_second {
+    background-image: url('../img/Gear_2_Gear_Second.webp');
+}
+
+.background-card-luffy_gear_third {
+    background-image: url('../img/Gear_3_Gear_Third.webp');
+}
+
+.background-card-luffy_gear_fourth {
+    background-image: url('../img/Gear_4_Gear_Fourth.webp');
+}
+
+.background-card-luffy_gear_fourth_Tank_Man {
+    background-image: url('../img/Gear_4 _Gear_Fourth _Tank_Man.webp');
+}
+
+.background-card-luffy_gear_fourth_Snake_Man {
+    background-image: url('../img/Gear_4_Gear_Fourth_Snake_Man.webp');
+}
+
+.info-luffy_gear {
+    position: absolute;
+    padding: 0.75rem;
+    width: 100%;
+    height: 100%;
+    background: black;
+    opacity: 0.8;
+    color: #fff;
+    transition: opacity .5s ease-out;
+    -moz-transition: opacity .5s ease-out;
+    -webkit-transition: opacity .5s ease-out;
+    -o-transition: opacity .5s ease-out;
+}
+
+.info-luffy_gear:hover {
+    opacity: 0.6;
+}
+
+.title-luffy_gear {
+    font-weight: 600;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    padding-top: 0.625rem;
+    height: 66px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    text-align: center;
+}
+
+.description-luffy_gear {
+    line-height: 1.5rem;
+    font-weight: 400;
+    padding-top: 0.25rem;
+    height: 52px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}

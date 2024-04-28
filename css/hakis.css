@@ -1,3 +1,7 @@
+body {
+    background: #dbe4ed;
+}
+
 h1.title{
     text-align: center;
     font-family: "Bebas Neue", sans-serif;
@@ -14,7 +18,7 @@ h1.title{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 30px;
-    font-family: "Roboto", sans-serif !important;
+    font-family: "Roboto", sans-serif;
 }
 
 .advertisers-service-sec span {
@@ -27,7 +31,7 @@ h1.title{
     height: 450px;
 }
 
-.advertisers-service-sec .col h3{
+.advertisers-service-sec .col h3, .advertisers-service-sec .col h4{
     padding: 0 1em 1em 1em;
     text-align: center;
 }
@@ -57,7 +61,7 @@ h1.title{
     transition: all 0.4s cubic-bezier(0.77, -0.04, 0, 0.99);
 }
 
-.advertisers-service-sec h3 {
+.advertisers-service-sec h3, .advertisers-service-sec h4 {
     font-size: 20px;
     text-transform: capitalize;
     font-weight: 600;
@@ -102,7 +106,7 @@ h1.title{
     color: #0dcaf0;
 }
 
-.advertisers-service-sec .service-card:hover h3 {
+.advertisers-service-sec .service-card:hover h3, .advertisers-service-sec .service-card:hover h4 {
     color: #ffffff;
 }
 

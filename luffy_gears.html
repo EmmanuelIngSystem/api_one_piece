@@ -9,7 +9,8 @@
     <!-- <script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="css/format.css">
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/luffy_gears.css">
+    <link rel="stylesheet" href="css/loader.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
@@ -17,9 +18,34 @@
 </head>
 <body>
     <h1 class="title">Gears de Luffy</h1>
-    <section id="container-luffy_gears">
-        <pre>{{ info }}</pre>
-    </section>
+    <div id="container-luffy_gears" class="container-lufy_gears">
+        <!-- loader -->
+        <div id="loading-animation" class="heading large-text" v-if="loading">
+            <p>l</p><p>o</p><p>a</p><p>d</p><p>i</p><p>n</p><p>g</p>
+        </div>
+        <!-- loader -->
+        <section v-if="errored">
+            <p>Lo sentimos, no es posible obtener la información en este momento, por favor intente nuevamente mas tarde</p>
+        </section>
+        <div v-if="loading">Cargando...</div>
+        <div v-else v-for="cardLuffyGear in info"
+        :class="[
+          'card-luffy_gear',
+          'background-card-luffy_gear',
+          {
+            'background-card-luffy_gear_second': hasGearType(cardLuffyGear.name, 'Gear 2'),
+            'background-card-luffy_gear_third': hasGearType(cardLuffyGear.name, 'Gear 3'),
+            'background-card-luffy_gear_fourth': hasGearType(cardLuffyGear.name, 'Gear 4 / Gear Fourth'),
+            'background-card-luffy_gear_fourth_Tank_Man': hasGearType(cardLuffyGear.name, 'Tank Man'),
+            'background-card-luffy_gear_fourth_Snake_Man': hasGearType(cardLuffyGear.name, 'Snake Man')
+          }
+        ]">
+            <div class="info-luffy_gear">
+                <h2 class="title-luffy_gear">{{ cardLuffyGear.name }}</h2>
+                <p class="description-luffy_gear">{{ cardLuffyGear.description }}</p>
+            </div>
+        </div> 
+    </div>
     <script src="js/luffy_gears.js"></script>
 </body>
 </html>
