@@ -1,0 +1,88 @@
+section#container-films {
+    display: grid;
+    gap: 1em;
+    grid-template-columns: auto auto auto auto auto;
+    font-family: sans-serif;
+}
+
+.card {
+    border: 1px solid black;
+    position: relative;
+    padding: 1rem;
+    background: hsl(191, 100%, 29%);
+    overflow: hidden;
+    border-radius: 1rem;
+    color: hsl(54.9, 96.7%, 88%);
+    min-height: 21vh;
+}
+
+.card::before {
+    content: "";
+    width: 1000px;
+    height: 1000px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    animation: rotating 2s infinite cubic-bezier(0.45, 0, 0.55, 1);
+    transform-origin: center;
+    background: conic-gradient(
+                                rgba(255,255,255,.6), 
+                                transparent, transparent, 
+                                rgba(255,255,255,.3), 
+                                transparent, 
+                                transparent, 
+                                rgba(255,255,255,.6)
+                            );
+}
+
+.card::after {
+    content: "";
+    width: calc(100% - 8px);
+    height: calc(100% - 8px);
+    position: absolute;
+    left: 4px;
+    top: 4px;
+    background: inherit;
+    border-radius: .8rem;
+    z-index: 1;
+}
+
+.card-content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+}
+
+@keyframes rotating {
+from {
+    transform: translate(-500px, -500px) rotate(0deg);
+}
+to {
+    transform: translate(-500px, -500px) rotate(360deg);
+}
+}
+
+h1 {
+    font-size: 1.2rem;
+}
+
+p{
+    margin-top: 0.5em;
+}
+
+button {
+    background: #dbe4ed;
+    border: 1px solid #dbe4ed;
+    border-radius: 4px;
+    padding: 8px 16px;
+    color: black;
+    background-image: linear-gradient(to right, #dbe4ed, #5593ac);
+    margin: 1rem 0 0 0;
+    text-shadow: 1px 1px 3px #fcd34d;
+    cursor: pointer;
+    transition: all 0s ease 0.9s;
+}
+
+button:hover {
+    background-image: linear-gradient(to left, #dbe4ed, #5593ac);
+}

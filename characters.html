@@ -10,6 +10,8 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="css/format.css">
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/loader.css">
+    <link rel="stylesheet" href="css/character.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
@@ -18,7 +20,99 @@
 <body>
     <h1 class="title">Characters</h1>
     <section id="container-characters">
-        <pre>{{ info }}</pre>
+        <!-- loader -->
+        <div id="loading-animation" class="heading large-text" v-if="loading">
+            <p>l</p><p>o</p><p>a</p><p>d</p><p>i</p><p>n</p><p>g</p>
+        </div>
+        <!-- loader -->
+        <section v-if="errored">
+            <p>Lo sentimos, no es posible obtener la información en este momento, por favor intente nuevamente mas tarde</p>
+        </section>
+        <div v-if="loading">Cargando...</div>
+        <section v-else v-for="cardCharacter in info" class="column-character">
+            <h3 class="character-name">{{ cardCharacter.name }}</h3>
+            <p class="character-size">
+                <label for="character-size">Size: </label>
+                <span>{{ cardCharacter.size }}</span>
+            </p>
+            <p class="character-age">
+                <label for="character-age">Age: </label>
+                <span>{{ cardCharacter.age }}</span>
+            </p>
+            <p class="character-job">
+                <label for="character-job">Job: </label>
+                <span>{{ cardCharacter.job }}</span>
+            </p>
+            <p class="character-status">
+                <label for="character-status">Status: </label>
+                <span>{{ cardCharacter.status }}</span>
+            </p>
+            <p class="character-bounty">
+                <label for="character-bounty">Bounty: </label>
+                <span>{{ cardCharacter.bounty }}</span>
+            </p>
+            <section class="buttons">
+                <button class="btn-character-crew">
+                    <details ontoggle="document.body.classList.toggle('modal-open', this.open)">
+                        <summary>Crew</summary>
+                        <!-- Dark background that covers the entire screen -->
+                        <div class="overlay"></div>
+                        <!-- modal crew -->
+                        <div class="modal">
+                            <span class="modal-close" onclick="this.closest('details').removeAttribute('open')">&times;</span>
+                            <div v-if="cardCharacter.crew">
+                                <h3 v-if="cardCharacter.crew.name" class="crew-name"> {{ cardCharacter.crew.name }}</h3>
+                                <p v-if="cardCharacter.crew.description" class="crew-description">
+                                    <label for="crew-description">Description: </label>
+                                    <span> {{ cardCharacter.crew.description }} </span>
+                                </p>
+                                <p v-if="cardCharacter.crew.status" class="crew-status">
+                                    <label for="crew-status">Status: </label>
+                                    <span> {{ cardCharacter.crew.status }} </span>
+                                </p>
+                                <p v-if="cardCharacter.crew.total_prime" class="crew-total_prime">
+                                    <label for="crew-total_prime">Total prime: </label>
+                                    <span> {{ cardCharacter.crew.total_prime }} </span>
+                                </p>
+                                <p v-if="cardCharacter.crew.is_yonko" class="crew-is_yonko">Is yonko</p>
+                                <p v-else class="crew-is_yonko">Is not yonko</p>
+                            </div>
+                        </div>
+                        <!-- modal crew -->
+                    </details>
+    
+                </button>
+                <button class="btn-character-fruit">
+                    <details ontoggle="document.body.classList.toggle('modal-open', this.open)">
+                        <summary>Fruit</summary>
+                        <!-- Dark background that covers the entire screen -->
+                        <div class="overlay"></div>
+                        <!-- modal fruit -->
+                        <div class="modal">
+                            <span class="modal-close" onclick="this.closest('details').removeAttribute('open')">&times;</span>
+                            <div v-if="cardCharacter.fruit">
+                                <h3 v-if="cardCharacter.fruit.name" class="fruit-name"> {{ cardCharacter.fruit.name }}</h3>
+                                <p v-if="cardCharacter.fruit.description" class="fruit-description">
+                                    <label for="fruit-description">Description: </label>
+                                    <span> {{ cardCharacter.fruit.description }} </span>
+                                </p>
+    
+                                <p v-if="cardCharacter.fruit.type" class="fruit-type">
+                                    <label for="fruit-type">Type: </label>
+                                    <span> {{ cardCharacter.fruit.type }} </span>
+                                </p>
+                                <img class="img-fruit"
+                                v-if="cardCharacter.fruit.filename && cardCharacter.fruit.filename !== 'https://images.api-onepiece.com/fruits/'" 
+                                v-bind:src="cardCharacter.fruit.filename" 
+                                alt="No image">
+                            </div>
+                        </div>
+                        <!-- modal fruit -->
+                    </details>
+    
+                </button>
+            </section>
+        </section>
     </section>
     <script src="js/characters.js"></script>
 </body>

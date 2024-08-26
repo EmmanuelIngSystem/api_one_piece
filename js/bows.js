@@ -11,7 +11,7 @@ new Vue({
         axios
             .get('https://api.api-onepiece.com/v2/arcs/en')
             .then(response => {
-                console.log("arcos")
+                console.log("arcs")
                 console.log(response.data)
                 this.info = response.data
             })

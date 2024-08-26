@@ -10,6 +10,8 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="css/format.css">
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/loader.css">
+    <link rel="stylesheet" href="css/luffy_techniques.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
@@ -18,7 +20,53 @@
 <body>
     <h1 class="title">Luffy's techniques</h1>
     <section id="container-luffy_techniques">
-        <pre>{{ info }}</pre>
+        <!-- loader -->
+        <div id="loading-animation" class="heading large-text" v-if="loading">
+            <p>l</p><p>o</p><p>a</p><p>d</p><p>i</p><p>n</p><p>g</p>
+        </div>
+        <!-- loader -->
+        <section v-if="errored">
+            <p>Lo sentimos, no es posible obtener la información en este momento, por favor intente nuevamente mas tarde</p>
+        </section>
+        <div v-if="loading">Cargando...</div>
+        <section v-else v-for="cardLuffy_techniques in info" class="column-luffy_techniques">
+            <h3 class="luffy_technique-name">{{ cardLuffy_techniques.name }}</h3>
+            <p class="luffy_technique-translation">
+                <label for="cardLuffy_techniques-translation">Translation: </label>
+                <span> {{ cardLuffy_techniques.translation }} </span>
+            </p>
+            <p class="luffy_technique-type">
+                <label for="luffy_techniques-type">Type: </label>
+                <span> {{ cardLuffy_techniques.type }} </span>
+            </p>
+            <p class="luffy_technique-description">
+                <label for="cardLuffy_techniques-description">Description: </label>
+                <span> {{ cardLuffy_techniques.description }} </span>
+            </p>
+            <section class="buttons" v-if="cardLuffy_techniques.luffy_gear">
+                <button class="btn-luffy_gear">
+                    <details ontoggle="document.body.classList.toggle('modal-open', this.open)">
+                        <summary>Luffy gear</summary>
+                        <!-- Dark background that covers the entire screen -->
+                        <div class="overlay"></div>
+                        <!-- modal luffy gear -->
+                        <div class="modal">
+                            <span class="modal-close" onclick="this.closest('details').removeAttribute('open')">&times;</span>
+                                <h3 class="luffyGear-name">{{ cardLuffy_techniques.luffy_gear.name }}</h3>
+                                <p class="luffyGear-description">
+                                    <label for="luffyGear-description">Description: </label>
+                                    <span> {{ cardLuffy_techniques.luffy_gear.description }} </span>
+                                </p>
+                                <p class="luffyGear-count_technique">
+                                    <label for="luffyGear-count_technique">Count technique: </label>
+                                    <span> {{ cardLuffy_techniques.luffy_gear.count_technique }} </span>
+                                </p>
+                        </div>
+                        <!-- modal luffy gear -->
+                    </details>
+                </button>
+            </section>
+        </section>
     </section>
     <script src="js/luffy_techniques.js"></script>
 </body>

@@ -1,0 +1,37 @@
+section#container-volumes{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    padding: 1rem;
+    margin: 15px 15px;
+}
+
+section.column-volume{
+    border: 1px solid #5593ac;
+    border-radius: 7px;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+section.column-volume:hover{
+    box-shadow: 0 14px 28px rgba(134,173,195,0.25), 0 10px 10px rgba(134,173,195,0.22);
+}
+
+section.column-volume h3.volume-title{
+    margin-bottom: 1rem;
+    color: #5593ac;
+    font-weight: bolder;
+}
+
+p.volume-tome_number, p.volume-tome_japan_date_publish{
+    color: #86adc3;
+}
+
+p.volume-tome_number{
+    margin-bottom: 1rem;
+}
+
+p.volume-tome_number span, 
+p.volume-tome_japan_date_publish time{
+    font-weight: bolder;
+}

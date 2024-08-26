@@ -10,6 +10,8 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="css/format.css">
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/loader.css">
+    <link rel="stylesheet" href="css/location.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
@@ -18,7 +20,30 @@
 <body>
     <h1 class="title">Locations</h1>
     <section id="container-locations">
-        <pre>{{ info }}</pre>
+        <!-- loader -->
+        <div id="loading-animation" class="heading large-text" v-if="loading">
+            <p>l</p><p>o</p><p>a</p><p>d</p><p>i</p><p>n</p><p>g</p>
+        </div>
+        <!-- loader -->
+        <section v-if="errored">
+            <p>Lo sentimos, no es posible obtener la información en este momento, por favor intente nuevamente mas tarde</p>
+        </section>
+        <div v-if="loading">Cargando...</div>
+        <section v-else v-for="cardLocation in info" class="column-location">
+            <h3 class="location-name">{{ cardLocation.name }}</h3>
+            <p class="location-affiliation_name">
+                <label for="location-affiliation_name">Affiliation name: </label>
+                <span>{{ cardLocation.affiliation_name }}</span>
+            </p>
+            <p class="location-region_name">
+                <label for="location-region_name">Region name: </label>
+                <span>{{ cardLocation.region_name }}</span>
+            </p>
+            <p class="location-sea_name">
+                <label for="location-sea_name">Sea name: </label>
+                <span>{{ cardLocation.sea_name }}</span>
+            </p>
+        </section>
     </section>
     <script src="js/locations.js"></script>
 </body>

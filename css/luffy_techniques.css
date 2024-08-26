@@ -1,0 +1,151 @@
+section#container-luffy_techniques{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    padding: 1rem;
+    margin: 15px 15px;
+}
+
+section.column-luffy_techniques{
+    border: 1px solid #5593ac;
+    border-radius: 7px;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+section.column-luffy_techniques:hover{
+    box-shadow: 0 14px 28px rgba(134,173,195,0.25), 0 10px 10px rgba(134,173,195,0.22);
+}
+
+section.column-luffy_techniques h3.luffy_technique-name{
+    margin-bottom: 1rem;
+    color: #5593ac;
+    font-weight: bolder;
+}
+
+p.luffy_technique-description, 
+p.luffy_technique-type, 
+p.luffy_technique-translation{
+    color: #86adc3;
+}
+
+p.luffy_technique-type span, p.luffy_technique-translation span{
+    font-weight: bolder;
+}
+
+p.luffy_technique-description span{
+    display: block;
+    text-align: justify;
+    padding: 15px;
+    padding-top: 0px;
+}
+
+p.luffy_technique-type, 
+p.luffy_technique-translation, 
+p.luffy_technique-description{
+    margin-bottom: 1rem;
+}
+
+section.buttons{
+    display: grid;
+    width: 50%;
+    margin: auto;
+    gap: 7px;
+}
+
+button.btn-luffy_gear{
+    width: 100%;
+    margin: auto;
+    padding: 0.7rem;
+    border: 1px solid #5593ac;
+    border-radius: 5px;
+    background-color: #86adc3;
+    color: #fff;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: 0.3s;
+}
+
+button.btn-luffy_gear:hover{
+    opacity: 1;
+}
+
+details {
+    position: relative;
+}
+
+details[open] .overlay {
+    display: block;
+}
+
+details[open] .modal {
+    display: block;
+}
+
+summary {
+    cursor: pointer;
+    list-style: none;
+}
+
+/* estructura basica del modal */
+div.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+    z-index: 999; /* Asegura que esté sobre todo lo demás */
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40%;
+    padding: 20px;
+    background-color: #86adc3;
+    border: 2px solid #5593ac;
+    box-shadow: 0 14px 28px rgba(134,173,195,0.25), 0 10px 10px rgba(134,173,195,0.22);
+    z-index: 1000;
+}
+
+.modal-close {
+    display: block;
+    text-align: right;
+    cursor: pointer;
+    font-size: 20px;
+    margin-top: -10px;
+}
+/* estructura basica del modal */
+
+/* modal luffy gear */
+div.modal  h3.luffyGear-name{
+    margin-bottom: 1rem;
+    font-weight: bolder;
+}
+
+p.luffyGear-description, 
+p.luffyGear-count_technique{
+    margin-bottom: 0.5rem;
+}
+
+p.luffyGear-description span, 
+p.luffyGear-count_technique span{
+    font-weight: bolder;
+}
+
+p.luffyGear-description span{
+    display: block;
+    text-align: justify;
+    padding: 15px;
+    padding-top: 0px;
+}
+
+section.character_captain-fruit{
+    text-align: left;
+}
+/* modal luffy gear */

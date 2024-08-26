@@ -10,6 +10,8 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="css/format.css">
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/films.css">
+    <link rel="stylesheet" href="css/loader.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
@@ -18,7 +20,27 @@
 <body>
     <h1 class="title">Films</h1>
     <section id="container-films">
-        <pre>{{ info }}</pre>
+        <!-- loader -->
+        <div id="loading-animation" class="heading large-text" v-if="loading">
+            <p>l</p><p>o</p><p>a</p><p>d</p><p>i</p><p>n</p><p>g</p>
+        </div>
+        <!-- loader -->
+        <section v-if="errored">
+            <p>Lo sentimos, no es posible obtener la información en este momento, por favor intente nuevamente mas tarde</p>
+        </section>
+        <div v-if="loading">Cargando...</div>
+        <section v-else v-for="cardFilm in info" class="column-film">
+            <div class="card">
+                <div class="card-content">
+                    <h1>{{ cardFilm.title }}</h1>
+                    <p>{{ cardFilm.description }}</p>
+                    <p>{{ cardFilm.release_date }}</p>
+                    <section class="section-button" v-if="cardFilm.saga">
+                        <button>Saga: {{ cardFilm.saga.title }}</button>
+                    </section>
+                </div>
+            </div>
+        </section>
     </section>
     <script src="js/films.js"></script>
 </body>

@@ -1,0 +1,41 @@
+section#container-bows{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    padding: 1rem;
+}
+
+section.column-bow{
+    border: 1px solid #5593ac;
+    border-radius: 7px;
+    padding: 1.5rem;
+}
+
+section.column-bow:hover{
+    box-shadow: 0 14px 28px rgba(134,173,195,0.25), 0 10px 10px rgba(134,173,195,0.22);
+}
+
+h3.title, p.saga{
+    margin-bottom: 1rem;
+}
+
+h3.title{
+    color: #5593ac;
+    font-weight: bolder;
+}
+
+p.saga{
+    color: #86adc3;
+}
+
+p.saga span{
+    font-weight: bolder;
+}
+
+p.description{
+    color: #86adc3;
+    text-align: justify;
+    max-height: 70px;
+    overflow-y: scroll;
+    scrollbar-color: #b2c8d8 #86adc3;
+}

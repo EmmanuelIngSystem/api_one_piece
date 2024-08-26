@@ -1,0 +1,51 @@
+section#container-fruits{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    padding: 1rem;
+    margin: 15px 15px;
+}
+
+section.column-fruit{
+    border: 1px solid #5593ac;
+    border-radius: 7px;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+section.column-fruit:hover{
+    box-shadow: 0 14px 28px rgba(134,173,195,0.25), 0 10px 10px rgba(134,173,195,0.22);
+}
+
+section.column-fruit h3.fruit-name{
+    margin-bottom: 1rem;
+    color: #5593ac;
+    font-weight: bolder;
+}
+
+p.fruit-description, p.fruit-type{
+    color: #86adc3;
+    margin-bottom: 1rem;
+}
+
+p.fruit-type span{
+    font-weight: bolder;
+}
+
+p.fruit-description{
+    text-align: justify;
+}
+
+img.img-fruit-filename{
+    display: block;
+    width: 200px;
+    height: 200px;
+    object-fit: contain; /* La imagen se ajusta al contenedor sin recortarse */
+    margin: auto;
+    padding: 1rem;
+    border: 1px solid #5593ac;
+}
+
+img.img-fruit-filename:hover{
+    box-shadow: 0 14px 28px rgba(85, 147, 172, 0.25), 0 10px 10px rgba(85, 147, 172, 0.22);
+}

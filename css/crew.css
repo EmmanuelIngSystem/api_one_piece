@@ -1,0 +1,45 @@
+section#container-crews{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    padding: 1rem;
+    margin: 15px 15px;
+}
+
+section.column-crew{
+    border: 1px solid #5593ac;
+    border-radius: 7px;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+section.column-crew:hover{
+    box-shadow: 0 14px 28px rgba(134,173,195,0.25), 0 10px 10px rgba(134,173,195,0.22);
+}
+
+section.column-crew h3.crew-name{
+    margin-bottom: 1rem;
+    color: #5593ac;
+    font-weight: bolder;
+}
+
+p.crew-description, 
+p.crew-is_yonko, 
+p.crew-status, 
+p.crew-total_prime, 
+p.crew-number{
+    color: #86adc3;
+    margin-top: 1rem;
+}
+
+p.crew-description span, 
+p.crew-is_yonko, 
+p.crew-status span, 
+p.crew-total_prime span, 
+p.crew-number span{
+    font-weight: bolder;
+}
+
+p.crew-number{
+    margin-bottom: 1rem;
+}

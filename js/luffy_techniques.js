@@ -11,7 +11,7 @@ new Vue({
         axios
             .get('https://api.api-onepiece.com/v2/luffy-techniques/en')
             .then(response => {
-                console.log("luffy tecnicas")
+                console.log("luffy techniques")
                 console.log(response.data)
                 this.info = response.data
             })

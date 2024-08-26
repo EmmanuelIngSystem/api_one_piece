@@ -10,6 +10,8 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="css/format.css">
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/loader.css">
+    <link rel="stylesheet" href="css/crew.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
@@ -18,7 +20,33 @@
 <body>
     <h1 class="title">Crews</h1>
     <section id="container-crews">
-        <pre>{{ info }}</pre>
+        <!-- loader -->
+        <div id="loading-animation" class="heading large-text" v-if="loading">
+            <p>l</p><p>o</p><p>a</p><p>d</p><p>i</p><p>n</p><p>g</p>
+        </div>
+        <!-- loader -->
+        <section v-if="errored">
+            <p>Lo sentimos, no es posible obtener la información en este momento, por favor intente nuevamente mas tarde</p>
+        </section>
+        <div v-if="loading">Cargando...</div>
+        <section v-else v-for="cardCrew in info" class="column-crew">
+            <h3 class="crew-name">{{ cardCrew.name }}</h3>
+            <p class="crew-description">{{ cardCrew.description }}</p>
+            <p v-if="cardCrew.is_yonko" class="crew-is_yonko">Is yonko</p>
+            <p v-else class="crew-is_yonko">Is not yonko</p>
+            <p class="crew-status"> 
+                <label for="crew-status">Status: </label>
+                <span> {{ cardCrew.status }} </span>
+            </p>
+            <p class="crew-total_prime"> 
+                <label for="crew-total_prime">Total prime: </label>
+                <span> {{ cardCrew.total_prime }} </span>
+            </p>
+            <p class="crew-number"> 
+                <label for="crew-number">Number: </label>
+                <span> {{ cardCrew.number }} </span>
+            </p>
+        </section>
     </section>
     <script src="js/crews.js"></script>
 </body>

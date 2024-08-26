@@ -10,6 +10,8 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="css/format.css">
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/loader.css">
+    <link rel="stylesheet" href="css/chapter.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
@@ -18,7 +20,45 @@
 <body>
     <h1 class="title">Chapters</h1>
     <section id="container-chapters">
-        <pre>{{ info }}</pre>
+        <!-- loader -->
+        <div id="loading-animation" class="heading large-text" v-if="loading">
+            <p>l</p><p>o</p><p>a</p><p>d</p><p>i</p><p>n</p><p>g</p>
+        </div>
+        <!-- loader -->
+        <section v-if="errored">
+            <p>Lo sentimos, no es posible obtener la información en este momento, por favor intente nuevamente mas tarde</p>
+        </section>
+        <div v-if="loading">Cargando...</div>
+        <section v-else v-for="cardChapter in info" class="column-chapter">
+            <h3 class="chapter-title">{{ cardChapter.title }}</h3>
+            <p class="chapter-description">{{ cardChapter.description }}</p>
+            <section class="buttons">
+                <button class="btn-tome">
+                    <details ontoggle="document.body.classList.toggle('modal-open', this.open)">
+                        <summary>Tome</summary>
+                        <!-- Dark background that covers the entire screen -->
+                        <div class="overlay"></div>
+                        <!-- modal tome -->
+                        <div class="modal">
+                            <span class="modal-close" onclick="this.closest('details').removeAttribute('open')">&times;</span>
+                            <div v-if="cardChapter.tome">
+                                <h3 v-if="cardChapter.tome.title" class="tome-title"> {{ cardChapter.tome.title }}</h3>
+                                <p v-if="cardChapter.tome.tome_number" class="tome-tome_number">
+                                    <label for="tome-tome_number">Tome number: </label>
+                                    <span> {{ cardChapter.tome.tome_number }} </span>
+                                </p>
+                                <p v-if="cardChapter.tome.tome_japan_date_publish" class="tome-tome_japan_date_publish">
+                                    <label for="tome-tome_japan_date_publish">Tome Japan date published: </label>
+                                    <span> {{ cardChapter.tome.tome_japan_date_publish }} </span>
+                                </p>
+                            </div>
+                        </div>
+                        <!-- modal tome -->
+                    </details>
+
+                </button>
+            </section>
+        </section>
     </section>
     <script src="js/chapters.js"></script>
 </body>

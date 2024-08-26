@@ -10,6 +10,8 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="css/format.css">
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/loader.css">
+    <link rel="stylesheet" href="css/boat.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
@@ -18,7 +20,106 @@
 <body>
     <h1 class="title">Boats</h1>
     <section id="container-boats">
-        <pre>{{ info }}</pre>
+        <!-- loader -->
+        <div id="loading-animation" class="heading large-text" v-if="loading">
+            <p>l</p><p>o</p><p>a</p><p>d</p><p>i</p><p>n</p><p>g</p>
+        </div>
+        <!-- loader -->
+        <section v-if="errored">
+            <p>Lo sentimos, no es posible obtener la información en este momento, por favor intente nuevamente mas tarde</p>
+        </section>
+        <div v-if="loading">Cargando...</div>
+        <section v-else v-for="cardBoat in info" class="column-boat">
+            <!-- Tarjeta principal -->
+            <h3 class="boat-name">{{ cardBoat.name }}</h3>
+            <p class="boat-description">{{ cardBoat.description }}</p>
+            <p class="boat-type"> <label for="boat-type">Type: </label> <span>{{ cardBoat.type }}</span></p>
+            <p class="boat-roman_name"> <label for="boat-roman_name">Roman name: </label> <span>{{ cardBoat.roman_name }}</span></p>
+            <section class="buttons">
+                <button class="btn-boat-captain">
+                    <details ontoggle="document.body.classList.toggle('modal-open', this.open)">
+                        <summary>Captain</summary>
+                        <!-- Dark background that covers the entire screen -->
+                        <div class="overlay"></div>
+                        <!-- modal capitan -->
+                        <div class="modal">
+                            <span class="modal-close" onclick="this.closest('details').removeAttribute('open')">&times;</span>
+                            <div v-if="cardBoat.character_captain">
+                                <h3 class="character_captain-name">{{ cardBoat.character_captain.name }}</h3>
+                                <div class="character_captain-header">Basic information</div>
+                                <p class="character_captain-size">
+                                    <label for="character_captain-size">Size: </label>
+                                    <span> {{ cardBoat.character_captain.size }} </span>
+                                </p>
+                                <p class="character_captain-job">
+                                    <label for="character_captain-job">Job: </label>
+                                    <span> {{ cardBoat.character_captain.job }} </span>
+                                </p>
+                                <p class="character_captain-status">
+                                    <label for="character_captain-status">Status: </label>
+                                    <span> {{ cardBoat.character_captain.status }} </span>
+                                </p>
+                                <p class="character_captain-age">
+                                    <label for="character_captain-age">Age: </label>
+                                    <span> {{ cardBoat.character_captain.age }} </span>
+                                </p>
+                                <section v-if="cardBoat.character_captain.fruit" class="character_captain-fruit">
+                                    <div class="character_captain-fruit-header">Devil fruit</div>
+                                    <p v-if="cardBoat.character_captain.fruit.name" class="cardBoat-captain-fruit-name">
+                                        <label for="cardBoat-captain-fruit-name">Fruit name: </label>
+                                        <span> {{cardBoat.character_captain.fruit.name}} </span>
+                                    </p>
+                                    <p v-if="cardBoat.character_captain.fruit.description" class="cardBoat-captain-fruit-description">
+                                        <label for="cardBoat-captain-fruit-description">Fruit description: </label>
+                                        <span> {{cardBoat.character_captain.fruit.description}} </span>
+                                    </p>
+                                    <img 
+                                    v-if="cardBoat.character_captain.fruit.filename && cardBoat.character_captain.fruit.filename !== 'https://images.api-onepiece.com/fruits/'" 
+                                    v-bind:src="cardBoat.character_captain.fruit.filename" 
+                                    alt="No image">
+                                </section>
+                            </div>
+                        </div>
+                        <!-- modal capitan -->
+                    </details>
+                </button>
+                <button class="btn-boat-crew">
+                    <details ontoggle="document.body.classList.toggle('modal-open', this.open)">
+                        <summary>Crew</summary>
+                        <!-- Dark background that covers the entire screen -->
+                        <div class="overlay"></div>
+                        <!-- modal crew -->
+                        <div class="modal">
+                            <span class="modal-close" onclick="this.closest('details').removeAttribute('open')">&times;</span>
+                            <div v-if="cardBoat.crew">
+                                <h3 v-if="cardBoat.crew.name" class="crew-name"> {{ cardBoat.crew.name }}</h3>
+                                <p v-if="cardBoat.crew.description" class="crew-description">
+                                    <label for="crew-description">Description: </label>
+                                    <span> {{ cardBoat.crew.description }} </span>
+                                </p>
+                                <p v-if="cardBoat.crew.status" class="crew-status">
+                                    <label for="crew-status">Status: </label>
+                                    <span> {{ cardBoat.crew.status }} </span>
+                                </p>
+                                <p v-if="cardBoat.crew.roman_name" class="crew-roman_name">
+                                    <label for="crew-roman_name">Roman name: </label>
+                                    <span> {{ cardBoat.crew.roman_name }} </span>
+                                </p>
+                                <p v-if="cardBoat.crew.total_prime" class="crew-total_prime">
+                                    <label for="crew-total_prime">Total prime: </label>
+                                    <span> {{ cardBoat.crew.total_prime }} </span>
+                                </p>
+                                <p v-if="cardBoat.crew.is_yonko" class="crew-is_yonko">Is yonko</p>
+                                <p v-else class="crew-is_yonko">Is not yonko</p>
+                            </div>
+                        </div>
+                        <!-- modal crew -->
+                    </details>
+
+                </button>
+            </section>
+            <!-- Tarjeta principal -->
+        </section>
     </section>
     <script src="js/boats.js"></script>
 </body>

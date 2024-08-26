@@ -1,0 +1,31 @@
+section#container-dials{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1rem;
+    margin: 15px 15px;
+}
+
+section.column-dial{
+    border: 1px solid #5593ac;
+    border-radius: 7px;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+section.column-dial:hover{
+    box-shadow: 0 14px 28px rgba(134,173,195,0.25), 0 10px 10px rgba(134,173,195,0.22);
+}
+
+h3.name{
+    margin-bottom: 1rem;
+    color: #5593ac;
+    font-weight: bolder;
+}
+
+p.type{
+    color: #86adc3;
+}
+
+p.type span{
+    font-weight: bolder;
+}

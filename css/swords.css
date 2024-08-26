@@ -1,0 +1,64 @@
+section#container-swords{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 50px;
+    margin: 0rem 1rem 0rem 1rem;
+}
+
+section.column-sword{
+    padding: 1rem;
+    background: #5593ac;
+    border-radius: 10px;
+    color: #fff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+section.column-sword:hover{
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+h3.roman-name{
+    background: #007a94;
+    padding: 1em;
+    text-align: center;
+}
+
+section.info-saga{
+    margin: 1rem;
+}
+
+section.info-saga p label{
+    text-decoration: underline;
+    font-style: italic;
+}
+
+p.name, 
+p.description, 
+p.type, 
+p.category, 
+p.isDestroy{
+    margin: 7px;
+}
+
+p.name{
+    font-weight: bolder;
+    text-align: center;
+}
+
+p.description{
+    text-align: justify;
+}
+
+p.isDestroy{
+    position: relative;
+    top: -11rem;
+    left: 18rem;
+    background: red;
+    color: #fff;
+    font-weight: bolder;
+    width: 20%;
+    text-align: center;
+    padding: 5px;
+    border: 1px solid #fff;
+}

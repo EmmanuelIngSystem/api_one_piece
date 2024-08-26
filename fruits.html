@@ -10,6 +10,8 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="css/format.css">
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/loader.css">
+    <link rel="stylesheet" href="css/fruit.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
@@ -18,7 +20,27 @@
 <body>
     <h1 class="title">Fruits</h1>
     <section id="container-fruits">
-        <pre>{{ info }}</pre>
+        <!-- loader -->
+        <div id="loading-animation" class="heading large-text" v-if="loading">
+            <p>l</p><p>o</p><p>a</p><p>d</p><p>i</p><p>n</p><p>g</p>
+        </div>
+        <!-- loader -->
+        <section v-if="errored">
+            <p>Lo sentimos, no es posible obtener la información en este momento, por favor intente nuevamente mas tarde</p>
+        </section>
+        <div v-if="loading">Cargando...</div>
+        <section v-else v-for="cardFruit in info" class="column-fruit">
+            <h3 class="fruit-name">{{ cardFruit.name }}</h3>
+            <p class="fruit-type">
+                <label for="fruit-type">Type: </label>
+                <span>{{ cardFruit.type }}</span>
+            </p>
+            <p class="fruit-description">{{ cardFruit.description }}</p>
+            <img class="img-fruit-filename"
+            v-if="cardFruit.filename && cardFruit.filename !== 'https://images.api-onepiece.com/fruits/'" 
+            v-bind:src="cardFruit.filename" 
+            alt="No image">
+        </section>
     </section>
     <script src="js/fruits.js"></script>
 </body>

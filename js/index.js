@@ -9,7 +9,7 @@ var containe_op = new Vue({
     },
     methods: {
         openPage: function (data) {
-            window.open(data, '_blank'); // de prueba le dejare el blank ya despues se lo quitare
+            window.open(data, '_blank');
         }
     },
     mounted() {

@@ -10,6 +10,8 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="css/format.css">
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/loader.css">
+    <link rel="stylesheet" href="css/episode.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
@@ -18,7 +20,63 @@
 <body>
     <h1 class="title">Episodes</h1>
     <section id="container-episodes">
-        <pre>{{ info }}</pre>
+        <!-- loader -->
+        <div id="loading-animation" class="heading large-text" v-if="loading">
+            <p>l</p><p>o</p><p>a</p><p>d</p><p>i</p><p>n</p><p>g</p>
+        </div>
+        <!-- loader -->
+        <section v-if="errored">
+            <p>Lo sentimos, no es posible obtener la información en este momento, por favor intente nuevamente mas tarde</p>
+        </section>
+        <div v-if="loading">Cargando...</div>
+        <section v-else v-for="cardEpisode in info" class="column-episode">
+            <h3 class="episode-title">{{ cardEpisode.title }}</h3>
+            <p class="episode-description">{{ cardEpisode.description }}</p>
+            <p class="episode-chapter">
+                <label for="episode-chapter">Chapter: </label>
+                <span>{{ cardEpisode.chapter }}</span>
+            </p>
+            <p class="episode-release_date">
+                <label for="release_date">Release date: </label>
+                <time :datetime="cardEpisode.release_date"> {{ cardEpisode.release_date }} </time><!-- ejemplo de fecha ya formateada: 21 de agosto de 2024 -->
+            </p>
+            <section class="buttons">
+                <button class="btn-episode-arc">
+                    <details ontoggle="document.body.classList.toggle('modal-open', this.open)">
+                        <summary>Arc</summary>
+                        <!-- Dark background that covers the entire screen -->
+                        <div class="overlay"></div>
+                        <!-- modal arc -->
+                        <div class="modal">
+                            <span class="modal-close" onclick="this.closest('details').removeAttribute('open')">&times;</span>
+                            <div v-if="cardEpisode.arc">
+                                <h3 class="arc-title">{{ cardEpisode.arc.title }}</h3>
+                                <p class="arc-description">{{ cardEpisode.arc.description }}</p>
+                                <div class="saga-header">Saga information</div>
+                                <h3 class="saga-title"> {{ cardEpisode.arc.saga.title }} </h3>
+                                <p class="saga-saga_number">
+                                    <label for="saga-saga_number">Number: </label>
+                                    <span> {{ cardEpisode.arc.saga.saga_number }} </span>
+                                </p>
+                                <p class="saga-saga_chapitre">
+                                    <label for="saga-saga_chapitre">Chapitre: </label>
+                                    <span> {{ cardEpisode.saga.saga_chapitre }} </span>
+                                </p>
+                                <p class="saga-saga_volume">
+                                    <label for="saga-saga_volume">Volume: </label>
+                                    <span> {{ cardEpisode.saga.saga_volume }} </span>
+                                </p>
+                                <p class="saga-saga_episode">
+                                    <label for="saga-saga_episode">Episode: </label>
+                                    <span> {{ cardEpisode.saga.saga_episode }} </span>
+                                </p>
+                            </div>
+                        </div>
+                        <!-- modal arc -->
+                    </details>
+                </button>
+            </section>
+        </section>
     </section>
     <script src="js/episodes.js"></script>
 </body>

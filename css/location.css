@@ -1,0 +1,33 @@
+section#container-locations{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    padding: 1rem;
+    margin: 15px 15px;
+}
+
+section.column-location{
+    border: 1px solid #5593ac;
+    border-radius: 7px;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+section.column-location:hover{
+    box-shadow: 0 14px 28px rgba(134,173,195,0.25), 0 10px 10px rgba(134,173,195,0.22);
+}
+
+section.column-location h3.location-name{
+    margin-bottom: 1rem;
+    color: #5593ac;
+    font-weight: bolder;
+}
+
+p.location-affiliation_name, p.location-region_name, p.location-sea_name{
+    color: #86adc3;
+    margin-top: 1rem;
+}
+
+p.location-affiliation_name span, p.location-region_name span, p.location-sea_name span{
+    font-weight: bolder;
+}

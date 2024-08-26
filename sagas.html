@@ -9,7 +9,8 @@
     <!-- <script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="css/format.css">
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/sagas.css">
+    <link rel="stylesheet" href="css/loader.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
@@ -17,8 +18,25 @@
 </head>
 <body>
     <h1 class="title">Sagas</h1>
-    <section id="container-sagas">
-        <pre>{{ info }}</pre>
+    <section id="container-sagas" class="container-sagas">
+        <!-- loader -->
+        <div id="loading-animation" class="heading large-text" v-if="loading">
+            <p>l</p><p>o</p><p>a</p><p>d</p><p>i</p><p>n</p><p>g</p>
+        </div>
+        <!-- loader -->
+        <section v-if="errored">
+            <p>Lo sentimos, no es posible obtener la información en este momento, por favor intente nuevamente mas tarde</p>
+        </section>
+        <div v-if="loading">Cargando...</div>
+        <section v-else v-for="cardSaga in info" class="column-saga">
+            <section class="info-saga">
+                <h3 class="title-saga">{{ cardSaga.title }}</h3>
+                <p class="saga-number">Numero de saga: {{ cardSaga.saga_number }}</p>
+                <p class="saga-chapitre">Capitulo de la saga: {{ cardSaga.saga_chapitre }}</p>
+                <p class="saga-volume">Volumen de laa saga: {{ cardSaga.saga_volume }}</p>
+                <p class="saga-episode">Episodio de la saga: {{ cardSaga.saga_episode }}</p>
+            </section>
+        </section>
     </section>
     <script src="js/sagas.js"></script>
 </body>
